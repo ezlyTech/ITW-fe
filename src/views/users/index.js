@@ -9,7 +9,7 @@ function Index() {
 
 	// Getting data from db.json
 	useEffect(() => {
-		fetch( "http://localhost:8000/users" ).then(( data ) => {
+		fetch( "http://localhost:3004/users" ).then(( data ) => {
 			return data.json();
 		}).then(( resp ) => {
 			userDataChange( resp );
@@ -46,7 +46,9 @@ function Index() {
 								<td>{ user.email }</td>
 								<td>{ user.firstName }</td>
 								<td>{ user.lastName }</td>
-								<td><a className="btn" color='secondary'>Edit</a></td>
+								<td>
+									<a className="btn" color='secondary'>Edit</a>
+								</td>
 							</tr>
 						))
 					}
