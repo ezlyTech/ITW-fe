@@ -1,6 +1,4 @@
-import React from 'react';
 import {Container, Table, Button, Input} from 'reactstrap';
-
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
@@ -26,7 +24,7 @@ const CreateUser = () => {
             body: JSON.stringify( userData )
         }).then(( data ) => {
 			alert( "Saved Successfully!" );
-            history( '/users' );
+            history.push( '/users' );
 		}).catch(( err ) => {
 			console.log( err.message );
 		})

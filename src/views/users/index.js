@@ -1,13 +1,32 @@
-import React from 'react';
 import {Container, Table, Button} from 'reactstrap';
-
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Index() {
 	const [ userData, userDataChange ] = useState( null );
+	const history = useHistory();
 
-	// Getting data from db.json
+	// **
+	// Functions for 
+	// each user details
+	// **
+	const LoadEdit = ( id ) => {
+
+	};
+	
+	const LoadView = ( id ) => {
+		history.push( '/view/' + id );
+	};
+
+	const DeleteUser = ( id ) => {
+		
+	};
+
+	// **
+	// Getting data 
+	// from db.json
+	// **
 	useEffect(() => {
 		fetch( "http://localhost:3004/users" ).then(( data ) => {
 			return data.json();
@@ -21,7 +40,7 @@ function Index() {
 	return (
 		<Container>
 			<div className='mt-3 text-right'>
-				<Link to="/create" color='primary'>+ Add User</Link>
+				<Link to="/users/create" color='primary'>+ Add User</Link>
 			</div>
 
 			<Table className='mt-3'>
@@ -47,7 +66,9 @@ function Index() {
 								<td>{ user.firstName }</td>
 								<td>{ user.lastName }</td>
 								<td>
-									<a className="btn" color='secondary'>Edit</a>
+									<a onClick={() => { LoadEdit(user.id) }} className="btn" color='secondary'>Edit</a>
+									<a onClick={() => { DeleteUser(user.id) }} className="btn" color='secondary'>Delete</a>
+									<a onClick={() => { LoadView(user.id) }} className="btn" color='secondary'>View</a>
 								</td>
 							</tr>
 						))

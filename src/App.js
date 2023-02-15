@@ -6,6 +6,7 @@ import Home from 'views/home';
 import Users from 'views/users';
 import CreateUser from 'views/users/CreateUser';
 import EditUser from 'views/users/EditUser';
+import ViewUser from 'views/users/ViewUser';
 
 function App() {
 	return (
@@ -13,18 +14,23 @@ function App() {
 			<Router>
 				<Page>
 					<Switch>
-						<Route exact path='/'>
-							<Home />
-						</Route>
 						<Route path='/users'>
 							<Users />
 						</Route>
 
-						<Route path='/create' >
+						<Route path='/users/create' >
 							<CreateUser />
 						</Route>
-						<Route path='/users/edit/:userid'>
+						<Route path='/edit/:userid'>
 							<EditUser />
+						</Route>
+						<Route path='/view/:userid'>
+							<ViewUser />
+						</Route>
+
+
+						<Route path='/'>
+							<Home />
 						</Route>
 
 						<Route path='*'>404</Route>
