@@ -1,11 +1,27 @@
 import React from 'react';
 import {Container, Table, Button} from 'reactstrap';
 
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 function Index() {
+	const [ userData, userDataChange ] = useState( null );
+
+	// Getting data from db.json
+	useEffect(() => {
+		fetch( "http://localhost:8000/users" ).then(( data ) => {
+			return data.json();
+		}).then(( resp ) => {
+			userDataChange( resp );
+		}).catch(( err ) => {
+			console.log( err.message );
+		})
+	}, []);
+
 	return (
 		<Container>
 			<div className='mt-3 text-right'>
-				<Button color='primary'>+ Add User</Button>
+				<Link to="/create" color='primary'>+ Add User</Link>
 			</div>
 
 			<Table className='mt-3'>
@@ -21,30 +37,19 @@ function Index() {
 				</thead>
 
 				<tbody>
-					<tr>
-						<th scope='row'>1</th>
-						<td />
-						<td />
-						<td>Mark</td>
-						<td>Otto</td>
-						<td />
-					</tr>
-					<tr>
-						<th scope='row'>2</th>
-						<td />
-						<td />
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td />
-					</tr>
-					<tr>
-						<th scope='row'>3</th>
-						<td />
-						<td />
-						<td>Larry</td>
-						<td>the Bird</td>
-						<td />
-					</tr>
+					{ /* Displaying lists of users */ }
+					{ userData &&
+						userData.map ( user => (
+							<tr key = { user.id }>
+								<td>{ user.id }</td>
+								<td>{ user.profile }</td>
+								<td>{ user.email }</td>
+								<td>{ user.firstName }</td>
+								<td>{ user.lastName }</td>
+								<td><a className="btn" color='secondary'>Edit</a></td>
+							</tr>
+						))
+					}
 				</tbody>
 			</Table>
 		</Container>
