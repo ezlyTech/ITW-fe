@@ -58,42 +58,46 @@ function Index() {
 
 	return (
 		<Container>
-			<div className='mt-3 text-right'>
-				<Link to={ `${url}/create` } color='primary'>+ Add User</Link>
+			<div className='mt-5 p-5 card'>
+				<div className='d-flex justify-content-between flex-wrap align-items-end'>
+					<h1 className='display-6 fw-bold'>Users</h1>
+					<Link to={ `${url}/create` } className="btn btn-primary add-user_btn fw-bold fs-6">+ Add User</Link>
+				</div>
+
+				<Table className='mt-4 table table-hover'>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Profile</th>
+							<th>Email</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th />
+						</tr>
+					</thead>
+
+					<tbody>
+						{ /* Displaying lists of users */ }
+						{ userData &&
+							userData.map ( user => (
+								<tr key = { user.id }>
+									<td>{ user.id }</td>
+									<td>{ user.profile }</td>
+									<td>{ user.email }</td>
+									<td>{ user.firstName }</td>
+									<td>{ user.lastName }</td>
+									<td className=''>
+										<a onClick={() => { LoadEdit(user.id) }} ><i className="fa-icon fa-solid fa-pen"></i></a>
+										<a onClick={() => { DeleteUser(user.id) }} className="ms-3"><i className="fa-icon fa-solid fa-trash"></i></a>
+										<a onClick={() => { LoadView(user.id) }} className="ms-3"><i className="fa-icon fa-solid fa-eye"></i></a>
+									</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</Table>
 			</div>
 
-			<Table className='mt-3'>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Profile</th>
-						<th>Email</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th />
-					</tr>
-				</thead>
-
-				<tbody>
-					{ /* Displaying lists of users */ }
-					{ userData &&
-						userData.map ( user => (
-							<tr key = { user.id }>
-								<td>{ user.id }</td>
-								<td>{ user.profile }</td>
-								<td>{ user.email }</td>
-								<td>{ user.firstName }</td>
-								<td>{ user.lastName }</td>
-								<td>
-									<a onClick={() => { LoadEdit(user.id) }} className="btn" color='secondary'>Edit</a>
-									<a onClick={() => { DeleteUser(user.id) }} className="btn" color='secondary'>Delete</a>
-									<a onClick={() => { LoadView(user.id) }} className="btn" color='secondary'>View</a>
-								</td>
-							</tr>
-						))
-					}
-				</tbody>
-			</Table>
 
 			<Switch>
 				<Route path={ `${path}/create` } >

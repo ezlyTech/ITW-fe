@@ -1,4 +1,9 @@
-
+/**
+ * Typography
+ */
+h1, h2, h3, h4, h5, h6 {
+    color: #424242;
+}
 
 p {
     margin: 0;
@@ -12,4 +17,38 @@ a {
         text-decoration: underline;
         color: #0f1518;
     }
+}
+
+/**
+ * Buttons
+ */
+.add-user_btn {
+
+    &:hover {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+/**
+ * Tables
+ */
+td {
+
+}
+
+.fa-icon {
+    cursor: pointer;
+}
+
+.fa-pen:hover {
+    color: #0d6efd;
+}
+
+.fa-trash:hover {
+    color: #D64751;
+}
+
+.fa-eye:hover {
+    color: #59bc58;
 }
