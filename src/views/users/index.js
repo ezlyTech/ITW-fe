@@ -1,11 +1,18 @@
 import {Container, Table, Button} from 'reactstrap';
+import { Switch, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
+
+import CreateUser from './CreateUser';
+import ViewUser from './ViewUser';
+import EditUser from './EditUser';
 
 function Index() {
 	const [ userData, userDataChange ] = useState( null );
 	const history = useHistory();
+	const { path, url } = useRouteMatch();     
+
 
 	// **
 	// Functions for 
@@ -16,12 +23,13 @@ function Index() {
 	};
 	
 	const LoadView = ( id ) => {
-		history.push( '/view/' + id );
+		history.push( '/users/view/' + id );
 	};
 
 	const DeleteUser = ( id ) => {
 		
 	};
+
 
 	// **
 	// Getting data 
@@ -37,10 +45,12 @@ function Index() {
 		})
 	}, []);
 
+
+
 	return (
 		<Container>
 			<div className='mt-3 text-right'>
-				<Link to="/users/create" color='primary'>+ Add User</Link>
+				<Link to={ `${url}/create` } color='primary'>+ Add User</Link>
 			</div>
 
 			<Table className='mt-3'>
@@ -75,6 +85,18 @@ function Index() {
 					}
 				</tbody>
 			</Table>
+
+			<Switch>
+				<Route path={ `${path}/create` } >
+					<CreateUser />
+				</Route>
+				<Route path={ `${path}/view/:userid` }>
+					<ViewUser />
+				</Route>
+				<Route path={ `${path}/edit/:userid` }>
+					<EditUser />
+				</Route>
+			</Switch>
 		</Container>
 	);
 }

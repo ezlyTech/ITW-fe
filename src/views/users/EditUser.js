@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Table, Button, Input} from 'reactstrap';
 
-const CreateUser = () => {
+const EditUser = () => {
     return (
 		<Container>
             <div>
@@ -11,4 +11,4 @@ const CreateUser = () => {
     );
 }
 
-export default CreateUser;
+export default EditUser;

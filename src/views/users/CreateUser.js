@@ -1,6 +1,6 @@
 import {Container, Table, Button, Input} from 'reactstrap';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 const CreateUser = () => {
@@ -25,6 +25,7 @@ const CreateUser = () => {
         }).then(( data ) => {
 			alert( "Saved Successfully!" );
             history.push( '/users' );
+            window.location.reload();
 		}).catch(( err ) => {
 			console.log( err.message );
 		})
@@ -69,7 +70,7 @@ const CreateUser = () => {
 
                     <div>
                         <button type='submit'>Save</button>
-                        <Link to='/' >Back</Link>
+                        <Link to='/users' >Back</Link>
                     </div>
                 </form>
             </div>
