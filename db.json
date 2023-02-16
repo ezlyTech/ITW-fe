@@ -3,16 +3,16 @@
     {
       "id": 1,
       "firstName": "Stephanie",
-      "lastName": "Reyes",
+      "lastName": "Reyessss",
       "email": "stephanie@gmail.com",
       "profile": "admin"
     },
     {
       "id": 2,
-      "profile": "admin",
-      "email": "john@gmail.com",
       "firstName": "John",
-      "lastName": "Doe"
+      "lastName": "Does",
+      "email": "john@gmail.com",
+      "profile": "admin"
     },
     {
       "firstName": "Eliz Marie",

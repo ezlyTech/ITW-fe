@@ -49,47 +49,59 @@ const EditUser = () => {
 
   return (
 		<Container>
-      <div>
-          <h1>Create User</h1>
+            <div className='mt-5 p-5 card add-user_container'>
+                <div className='d-flex justify-content-between flex-wrap align-items-start'>
+                    <h3 className="fw-bold mb-3">Edit User</h3>
+                    <Link to='/users' ><i className="fa-solid fa-xmark fa-2xl"></i></Link>
+                </div>
 
-          <form onSubmit={ handleSubmit } >
-              <div>
-                  <label>ID</label>
-                  <input value={ id } disabled="disabled" ></input>
-              </div>
+                <form onSubmit={ handleSubmit } >
 
-              <div>
-                  <label>First Name</label>
-                  <input 
-                  required 
-                  value={ firstName } 
-                  onMouseDown={ e => valChange(true) } 
-                  onChange={ e => firstNameChange(e.target.value) } >
-                  </input>
-                  { firstName.length == 0 && validate && <span>Enter the name</span>}
-              </div>
+                    <div className='form_container'>
+                        <div className='form-inputs'>
+                            <label className='form-label'>First Name</label>
+                            <input 
+                            className='form-control'
+                            required 
+                            value={ firstName }
+                            onChange={ e => firstNameChange(e.target.value) } >
+                            </input>
+                            { firstName.length == 0 && validate && <span>Enter the name</span>}
+                        </div>
 
-              <div>
-                  <label>Last Name</label>
-                  <input required value={ lastName } onChange={ e => lastNameChange(e.target.value) } ></input>
-              </div>
+                        <div className='form-inputs'>
+                            <label className='form-label'>Last Name</label>
+                            <input 
+                            className='form-control' 
+                            required 
+                            value={ lastName } 
+                            onChange={ e => lastNameChange(e.target.value) } ></input>
+                        </div>
 
-              <div>
-                  <label>Profile</label>
-                  <input value={ profile } onChange={ e => profileChange(e.target.value) } ></input>
-              </div>
+                        <div className='form-inputs'>
+                            <label className='form-label'>Profile</label>
+                            <input 
+                            className='form-control' 
+                            required
+                            value={ profile } 
+                            onChange={ e => profileChange(e.target.value) } ></input>
+                        </div>
 
-              <div>
-                  <label>Email</label>
-                  <input required value={ email } onChange={ e => emailChange(e.target.value) } ></input>
-              </div>
+                        <div className='form-inputs'>
+                            <label className='form-label'>Email</label>
+                            <input 
+                            className='form-control' 
+                            required 
+                            value={ email } 
+                            onChange={ e => emailChange(e.target.value) } ></input>
+                        </div>
+                    </div>
 
-              <div>
-                  <button type='submit'>Save</button>
-                  <Link to='/users' >Back</Link>
-              </div>
-          </form>
-      </div>
+                    <div className='mt-4'>
+                        <button className='btn btn-success' type='submit'>Save</button>
+                    </div>
+                    </form>
+            </div>
 		</Container>
   );
 }
