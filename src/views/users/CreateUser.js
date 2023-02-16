@@ -1,11 +1,8 @@
-import {Container, Table, Button, Input} from 'reactstrap';
-import { useEffect, useState } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 const CreateUser = () => {
-
-    const [ id, idChange ] = useState("");
     const [ firstName, firstNameChange ] = useState("");
     const [ lastName, lastNameChange ] = useState("");
     const [ email, emailChange ] = useState("");

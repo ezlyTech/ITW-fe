@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Container } from "reactstrap";
 
 const ViewUser = () => {
     const { userid } = useParams();

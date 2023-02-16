@@ -1,7 +1,7 @@
 import React from 'react';
-import {Container, Table, Button, Input} from 'reactstrap';
+import { Container } from 'reactstrap';
 import { useState, useEffect } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useHistory, useParams } from 'react-router-dom';
 
 const EditUser = () => {

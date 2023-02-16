@@ -19,6 +19,10 @@ a {
     }
 }
 
+th {
+    color: #9F9F9F;
+}
+
 /**
  * Buttons
  */
@@ -80,7 +84,7 @@ a {
         color: #292929;
     }
 
-    input {
+    input, select {
         border-radius: 10px;
         width: 100%;
     }

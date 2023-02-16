@@ -1,6 +1,7 @@
 import React from 'react';
-import {Container, Card} from 'reactstrap';
+import { Container, Card } from 'reactstrap';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Index() {
     const [ userData, userDataChange ] = useState({});
@@ -25,10 +26,12 @@ function Index() {
 						<h1 className='display-5 fw-bold'> { userData.firstName }</h1>
 					</div>
 					<address className='d-flex align-items-end flex-column'>
-						<a href='mailto:email@address.com'>email@address.com</a>
-						<a className='mt-1' href='tel:+635552368'>(+63) 123-1234-1234</a>
+						<a href={"mailto:" + userData.email}>{ userData.email }</a>
+						<a className='mt-1' href={"tel:" + userData.phone}>{ userData.phone }</a>
 					</address>
 				</div>
+
+				<Link to='/users' className="mt-5">Go to users <i className="fa-solid fa-arrow-right-long"></i></Link>
 			</Card>
 		</Container>
 	);

@@ -1,4 +1,4 @@
-import {Container, Table, Button} from 'reactstrap';
+import { Container, Table } from 'reactstrap';
 import { Switch, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -13,11 +13,6 @@ function Index() {
 	const history = useHistory();
 	const { path, url } = useRouteMatch();
 
-
-	// **
-	// Functions for 
-	// each user details
-	// **
 	const LoadEdit = ( id ) => {
 		history.push( '/users/edit/' + id );
 	};
@@ -31,7 +26,7 @@ function Index() {
             fetch( "http://localhost:3004/users/" + id, {
                 method: "DELETE"
             }).then(( res ) => {
-                alert( 'Removed successfully.' )
+                // alert( 'Removed successfully.' )
                 window.location.reload();
             }).catch(( err ) => {
                 console.log( err.message );
@@ -39,11 +34,6 @@ function Index() {
         }
 	};
 
-
-	// **
-	// Getting data 
-	// from db.json
-	// **
 	useEffect(() => {
 		fetch( "http://localhost:3004/users" ).then(( data ) => {
 			return data.json();
@@ -70,7 +60,7 @@ function Index() {
 				</Route>
 			</Switch>
 			
-			<div className='mt-5 p-5 card'>
+			<div className='mt-5 p-5 card table-responsive'>
 				<div className='d-flex justify-content-between flex-wrap align-items-end'>
 					<h1 className='display-6 fw-bold'>Users</h1>
 					<Link to={ `${url}/create` } className="btn btn-primary add-user_btn fw-bold fs-6">+ Add User</Link>
@@ -89,7 +79,6 @@ function Index() {
 					</thead>
 
 					<tbody>
-						{ /* Displaying lists of users */ }
 						{ userData &&
 							userData.map ( user => (
 								<tr key = { user.id }>

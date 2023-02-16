@@ -1,39 +1,26 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "Stephanie",
-      "lastName": "Reyessss",
-      "email": "stephanie@gmail.com",
-      "profile": "admin"
-    },
-    {
-      "id": 2,
-      "firstName": "John",
-      "lastName": "Does",
+      "firstName": "John ",
+      "lastName": "Doe",
       "email": "john@gmail.com",
-      "profile": "admin"
+      "profile": "Dev",
+      "id": 1
     },
     {
-      "firstName": "Eliz Marie",
-      "lastName": "Manalo",
-      "email": "manaloelizmarie@gmail.com",
-      "profile": "secret",
-      "id": 3
-    },
-    {
-      "firstName": "Eliz Marie",
-      "lastName": "Manalo",
-      "email": "manaloelizmarie@gmail.com",
-      "profile": "sasas",
-      "id": 4
+      "firstName": "Stephanie",
+      "lastName": "Reyes",
+      "email": "stephanie@gmail.com",
+      "profile": "QA",
+      "id": 2
     }
   ],
   "main_user": {
     "id": 1,
     "firstName": "Eliz Marie",
     "lastName": "Manalo",
-    "email": "elizmarie@gmail.com",
-    "profile": "admin"
+    "email": "manaloelizmarie@gmail.com",
+    "profile": "admin",
+    "phone": "(+63)956 627 2119"
   }
 }
