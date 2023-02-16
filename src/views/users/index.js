@@ -58,6 +58,18 @@ function Index() {
 
 	return (
 		<Container>
+			<Switch>
+				<Route path={ `${path}/create` } >
+					<CreateUser />
+				</Route>
+				<Route path={ `${path}/view/:userid` }>
+					<ViewUser />
+				</Route>
+				<Route path={ `${path}/edit/:userid` }>
+					<EditUser />
+				</Route>
+			</Switch>
+			
 			<div className='mt-5 p-5 card'>
 				<div className='d-flex justify-content-between flex-wrap align-items-end'>
 					<h1 className='display-6 fw-bold'>Users</h1>
@@ -72,7 +84,7 @@ function Index() {
 							<th>Email</th>
 							<th>First Name</th>
 							<th>Last Name</th>
-							<th />
+							<th>Actions</th>
 						</tr>
 					</thead>
 
@@ -87,9 +99,15 @@ function Index() {
 									<td>{ user.firstName }</td>
 									<td>{ user.lastName }</td>
 									<td className=''>
-										<a onClick={() => { LoadEdit(user.id) }} ><i className="fa-icon fa-solid fa-pen"></i></a>
-										<a onClick={() => { DeleteUser(user.id) }} className="ms-3"><i className="fa-icon fa-solid fa-trash"></i></a>
-										<a onClick={() => { LoadView(user.id) }} className="ms-3"><i className="fa-icon fa-solid fa-eye"></i></a>
+										<a onClick={() => { LoadEdit(user.id) }} >
+											<i className="fa-icon fa-solid fa-pen"></i>
+										</a>
+										<a onClick={() => { DeleteUser(user.id) }} className="ms-3">
+											<i className="fa-icon fa-solid fa-trash"></i>
+										</a>
+										<a onClick={() => { LoadView(user.id) }} className="ms-3">
+											<i className="fa-icon fa-solid fa-eye"></i>
+										</a>
 									</td>
 								</tr>
 							))
@@ -97,19 +115,6 @@ function Index() {
 					</tbody>
 				</Table>
 			</div>
-
-
-			<Switch>
-				<Route path={ `${path}/create` } >
-					<CreateUser />
-				</Route>
-				<Route path={ `${path}/view/:userid` }>
-					<ViewUser />
-				</Route>
-				<Route path={ `${path}/edit/:userid` }>
-					<EditUser />
-				</Route>
-			</Switch>
 		</Container>
 	);
 }

@@ -31,12 +31,8 @@ a {
 }
 
 /**
- * Tables
+ * Icons
  */
-td {
-
-}
-
 .fa-icon {
     cursor: pointer;
 }
@@ -51,4 +47,13 @@ td {
 
 .fa-eye:hover {
     color: #59bc58;
+}
+
+
+/**
+ * Containers
+ */
+.user-details_container {
+    background-color: #EBF6FF;
+    border: 1px solid #5DB9FF;
 }
