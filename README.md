@@ -21,6 +21,8 @@ You may also see any lint errors in the console.
 
 ### `json-server --watch db.json --port 3004`
 
+Watches the db.json file and displays the user details.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
