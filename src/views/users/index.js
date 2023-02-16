@@ -11,7 +11,7 @@ import EditUser from './EditUser';
 function Index() {
 	const [ userData, userDataChange ] = useState( null );
 	const history = useHistory();
-	const { path, url } = useRouteMatch();     
+	const { path, url } = useRouteMatch();
 
 
 	// **
@@ -19,7 +19,7 @@ function Index() {
 	// each user details
 	// **
 	const LoadEdit = ( id ) => {
-
+		history.push( '/users/edit/' + id );
 	};
 	
 	const LoadView = ( id ) => {
