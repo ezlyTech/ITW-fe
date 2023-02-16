@@ -18,10 +18,10 @@ const ViewUser = () => {
     }, []);
 
     return (
-        <div className="mt-5 p-5 card user-details_container">
+        <div className="mt-5 p-5 card details_container">
             <div className="d-flex justify-content-between flex-wrap align-items-start">
                 <h3 className="fw-bold mb-3">User Details</h3>
-                <Link to='/users' ><i class="fa-solid fa-xmark fa-2xl"></i></Link>
+                <Link to='/users' ><i className="fa-solid fa-xmark fa-2xl"></i></Link>
             </div>
             { userData && 
                 <div>
