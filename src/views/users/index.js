@@ -27,7 +27,16 @@ function Index() {
 	};
 
 	const DeleteUser = ( id ) => {
-		
+		if ( window.confirm( 'Do you want to remove?' ) ) {
+            fetch( "http://localhost:3004/users/" + id, {
+                method: "DELETE"
+            }).then(( res ) => {
+                alert( 'Removed successfully.' )
+                window.location.reload();
+            }).catch(( err ) => {
+                console.log( err.message );
+            })
+        }
 	};
 
 

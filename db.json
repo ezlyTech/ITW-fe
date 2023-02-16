@@ -22,39 +22,18 @@
       "id": 3
     },
     {
+      "id": 4,
       "firstName": "Eliz Marie",
       "lastName": "Manalo",
       "email": "manaloelizmarie@gmail.com",
-      "profile": "",
-      "id": 4
-    },
-    {
-      "firstName": "Eliz Marie",
-      "lastName": "Manalo",
-      "email": "manaloelizmarie@gmail.com",
-      "profile": "",
-      "id": 5
-    },
-    {
-      "firstName": "Eliz Marie",
-      "lastName": "Manalo",
-      "email": "manaloelizmarie@gmail.com",
-      "profile": "",
-      "id": 6
-    },
-    {
-      "firstName": "Eliz Marie",
-      "lastName": "Manalo",
-      "email": "manaloelizmarie@gmail.com",
-      "profile": "",
-      "id": 7
-    },
-    {
-      "firstName": "Eliz Marie",
-      "lastName": "Manalo",
-      "email": "manaloelizmarie@gmail.com",
-      "profile": "",
-      "id": 8
+      "profile": "hakdog"
     }
-  ]
+  ],
+  "main_user": {
+    "id": 1,
+    "firstName": "Stephanie",
+    "lastName": "Reyesss",
+    "email": "stephanie@gmail.com",
+    "profile": "admin"
+  }
 }
