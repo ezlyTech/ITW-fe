@@ -1,0 +1,15 @@
+
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #324552;
+
+    &:hover {
+        text-decoration: underline;
+        color: #0f1518;
+    }
+}

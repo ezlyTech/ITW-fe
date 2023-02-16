@@ -19,12 +19,16 @@ function Index() {
 	return (
 		<Container>
 			<Card className='mt-5 p-5'>
-				<h1 className='display-4'> { userData.firstName } </h1>
-				<address>
-					<a href='mailto:email@address.com'>email@address.com</a>
-					<br />
-					<a href='tel:+635552368'>(+63) 123-1234-1234</a>
-				</address>
+				<div className='d-flex justify-content-between flex-wrap align-items-end'>
+					<div>
+						<p className='text-muted'>Welcome <span role="img" aria-label="hi">👋</span> </p>
+						<h1 className='display-5 fw-bold'> { userData.firstName }</h1>
+					</div>
+					<address className='d-flex align-items-end flex-column'>
+						<a href='mailto:email@address.com'>email@address.com</a>
+						<a className='mt-1' href='tel:+635552368'>(+63) 123-1234-1234</a>
+					</address>
+				</div>
 			</Card>
 		</Container>
 	);
